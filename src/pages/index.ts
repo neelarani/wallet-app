@@ -1,0 +1,11 @@
+export { default as NotFound } from "./_NotFound";
+export { default as Home } from "./_Home";
+export { default as About } from "./_About";
+export { default as Features } from "./_Features";
+export { default as FAQ } from "./_FAQ";
+export { default as Login } from "./_Login";
+export { default as Register } from "./_Register";
+export { default as Contact } from "./_Contact";
+export { default as UnderConstruction } from "./_UnderConstruction";
+export { default as VerifyUser } from "./_VerifyUser";
+export { default as Unauthorized } from "./_Unauthorized";
