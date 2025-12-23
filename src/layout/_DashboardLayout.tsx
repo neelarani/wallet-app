@@ -1,11 +1,11 @@
-import { AppSidebar, NavMenu } from "@/components";
+import { AppSidebar, NavMenu } from '@/components';
 import {
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
-} from "@/components/ui/sidebar";
+} from '@/components/ui/sidebar';
 
-import { Outlet } from "react-router-dom";
+import { Outlet } from 'react-router-dom';
 
 const DashboardLayout = () => {
   return (

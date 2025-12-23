@@ -1,9 +1,9 @@
-import { createApi } from "@reduxjs/toolkit/query/react";
-import { axiosInstance } from "@/lib";
-import type { AxiosError } from "axios";
+import { createApi } from '@reduxjs/toolkit/query/react';
+import { axiosInstance } from '@/lib';
+import type { AxiosError } from 'axios';
 
 export const baseApi = createApi({
-  reducerPath: "baseApi",
+  reducerPath: 'baseApi',
   baseQuery: async ({ url, method, data, params, headers }) => {
     try {
       const result = await axiosInstance({
@@ -26,5 +26,5 @@ export const baseApi = createApi({
   },
 
   endpoints: () => ({}),
-  tagTypes: ["USER", "TRANSACTION", "APPLICATION"],
+  tagTypes: ['USER', 'TRANSACTION', 'APPLICATION'],
 });

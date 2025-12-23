@@ -1,20 +1,20 @@
-import React from "react";
-import { z } from "zod";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { toast } from "sonner";
+import React from 'react';
+import { z } from 'zod';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
+import { toast } from 'sonner';
 
 const contactSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  email: z.string().email({ message: "Please enter a valid email." }),
+  name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
+  email: z.string().email({ message: 'Please enter a valid email.' }),
   description: z
     .string()
-    .min(10, { message: "Describe your message (min 10 characters)." }),
+    .min(10, { message: 'Describe your message (min 10 characters).' }),
 });
 
 type ContactFormValues = z.infer<typeof contactSchema>;
@@ -27,9 +27,9 @@ const Contact: React.FC = () => {
   } = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
-      name: "",
-      email: "",
-      description: "",
+      name: '',
+      email: '',
+      description: '',
     },
   });
 
@@ -62,7 +62,7 @@ const Contact: React.FC = () => {
                 <Input
                   id="name"
                   placeholder="Your full name"
-                  {...register("name")}
+                  {...register('name')}
                   aria-invalid={!!errors.name}
                 />
                 {errors.name && (
@@ -80,7 +80,7 @@ const Contact: React.FC = () => {
                   id="email"
                   type="email"
                   placeholder="you@example.com"
-                  {...register("email")}
+                  {...register('email')}
                   aria-invalid={!!errors.email}
                 />
                 {errors.email && (
@@ -98,7 +98,7 @@ const Contact: React.FC = () => {
                   id="description"
                   placeholder="Tell us what's happening, include relevant details..."
                   rows={5}
-                  {...register("description")}
+                  {...register('description')}
                   aria-invalid={!!errors.description}
                 />
                 {errors.description && (
@@ -108,9 +108,9 @@ const Contact: React.FC = () => {
                 )}
               </div>
 
-              <div className="flex items-center justify-end">
+              <div className="flex items-center justify-end font-bold cursor-pointer">
                 <Button type="submit" disabled={isSubmitting}>
-                  {isSubmitting ? "Sending..." : "Send Message"}
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </Button>
               </div>
             </form>

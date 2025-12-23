@@ -1,10 +1,10 @@
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-import { Logo } from "@/components";
-import { Link, useLocation } from "react-router-dom";
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
+import { Logo } from '@/components';
+import { Link, useLocation } from 'react-router-dom';
 
-const hidePaths = ["/user", "/admin", "/agent"];
+const hidePaths = ['/user', '/admin', '/agent'];
 
 const Footer = () => {
   const location = useLocation();
@@ -115,7 +115,7 @@ const Footer = () => {
           <Separator className="my-8" />
           <div className="sm:flex sm:justify-between sm:items-center">
             <p className="text-xs text-muted-foreground">
-              © {new Date().getFullYear()} NWA. All rights reserved.
+              © {new Date().getFullYear()} Wallet APP. All rights reserved.
             </p>
             <ul className="mt-4 flex flex-wrap gap-4 text-xs text-muted-foreground sm:mt-0">
               <li>

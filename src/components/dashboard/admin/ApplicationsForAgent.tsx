@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { adminApi } from "@/redux";
-import { getErrorMessage, objectToSearchParams } from "@/utils";
+import { useState } from 'react';
+import { adminApi } from '@/redux';
+import { getErrorMessage, objectToSearchParams } from '@/utils';
 import {
   Table,
   TableBody,
@@ -8,11 +8,11 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { Button } from "@/components/ui/button";
-import { toast } from "sonner";
-import { IToAgentStatus } from "@/types";
-import { Loader2 } from "lucide-react";
+} from '@/components/ui/table';
+import { Button } from '@/components/ui/button';
+import { toast } from 'sonner';
+import { IToAgentStatus } from '@/types';
+import { Loader2 } from 'lucide-react';
 
 const ApplicationsForAgent = () => {
   const [page, setPage] = useState(1);
@@ -34,11 +34,11 @@ const ApplicationsForAgent = () => {
   const meta = data?.meta;
 
   const handlePrev = () => {
-    if (page > 1) setPage((prev) => prev - 1);
+    if (page > 1) setPage(prev => prev - 1);
   };
 
   const handleNext = () => {
-    if (meta && page < meta.totalPage) setPage((prev) => prev + 1);
+    if (meta && page < meta.totalPage) setPage(prev => prev + 1);
   };
 
   const handleUpdateStatus = async (
@@ -51,7 +51,7 @@ const ApplicationsForAgent = () => {
       toast.success(`Application ${status.toLowerCase()} successfully`);
       refetch();
     } catch (error: unknown) {
-      toast.error(getErrorMessage(error) || "Something went wrong");
+      toast.error(getErrorMessage(error) || 'Something went wrong');
     } finally {
       setLoadingId(null);
     }
@@ -74,7 +74,7 @@ const ApplicationsForAgent = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {applications.map((app) => {
+          {applications.map(app => {
             const isPending = app.status === IToAgentStatus.PENDING;
             const isRowLoading = loadingId === app._id;
 
@@ -82,15 +82,15 @@ const ApplicationsForAgent = () => {
               <TableRow key={app._id}>
                 <TableCell>{app.user?.name}</TableCell>
                 <TableCell>{app.user?.email}</TableCell>
-                <TableCell>{app.user?.phone ?? "N/A"}</TableCell>
+                <TableCell>{app.user?.phone ?? 'N/A'}</TableCell>
                 <TableCell>
                   <span
                     className={`px-2 py-1 rounded text-xs font-medium ${
                       app.status === IToAgentStatus.PENDING
-                        ? "bg-yellow-100 text-yellow-800"
+                        ? 'bg-yellow-100 text-yellow-800'
                         : app.status === IToAgentStatus.SUSPENDED
-                        ? "bg-red-100 text-red-800"
-                        : "bg-green-100 text-green-800"
+                        ? 'bg-red-100 text-red-800'
+                        : 'bg-green-100 text-green-800'
                     }`}
                   >
                     {app.status}
