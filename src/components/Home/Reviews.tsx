@@ -12,7 +12,7 @@ const reviews = [
     img: 'https://i.ibb.co.com/47w1b41/images-4.jpg',
     name: 'Rasel',
     role: 'Software Engineer',
-    message: 'good',
+    message: 'there service is so good',
   },
   {
     img: 'https://i.ibb.co.com/z8p63KS/cartton.jpg',
