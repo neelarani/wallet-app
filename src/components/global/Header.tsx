@@ -1,44 +1,93 @@
-import { Logo, Logout, NavMenu } from '@/components';
+import { Logo, NavMenu, Logout } from '@/components';
 import { userApi } from '@/redux';
 import { NavLink } from 'react-router-dom';
+import { useState, useRef, useEffect } from 'react';
 
 const Header = () => {
-  const user = userApi.useUserInfoQuery();
-  const userData = user.data?.data;
+  const { data } = userApi.useUserInfoQuery();
+  const userData = data?.data;
+
+  const [open, setOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // বাইরে click করলে dropdown বন্ধ হবে
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target as Node)
+      ) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   return (
-    <header className="bg-background border-b sticky top-0 left-0 z-[var(--z-header)]">
+    <header className="bg-background border-b sticky top-0 z-[var(--z-header)]">
       <div className="container mx-auto">
-        <div className="flex h-16 items-center justify-between gap-8 px-4 sm:px-6 lg:px-8 mx-auto">
-          <NavLink className="block text-primary" to="/">
+        <div className="flex h-16 items-center justify-between px-4">
+          <NavLink to="/">
             <Logo />
           </NavLink>
 
-          <div className="flex flex-1 items-center justify-end gap-6">
+          <div className="flex items-center gap-6">
             <NavMenu />
-            <div className="flex items-center gap-4">
-              <div className="sm:flex sm:gap-4 ">
-                {userData ? (
-                  <Logout />
-                ) : (
-                  <>
-                    <NavLink
-                      className="block rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-                      to="/login"
-                    >
-                      Login
-                    </NavLink>
+
+            {userData ? (
+              <div className="relative" ref={dropdownRef}>
+                {/* Avatar */}
+                <img
+                  src="https://i.ibb.co.com/h8fLJMm/images.png"
+                  className="w-10 h-10 rounded-full cursor-pointer border"
+                  onClick={() => setOpen(prev => !prev)}
+                />
+
+                {/* Dropdown */}
+                {open && (
+                  <div className="absolute right-0 mt-2 w-64 rounded-xl border bg-background shadow-lg p-3">
+                    <div className="mb-2 border-b pb-2">
+                      <p className="text-sm md:text-base font-medium">
+                        {userData.email}
+                      </p>
+                      <p className="text-xs text-muted-foreground font-medium">
+                        Role: {userData.role}
+                      </p>
+                    </div>
 
                     <NavLink
-                      className="hidden rounded-md bg-secondary px-5 py-2.5 text-sm font-medium text-secondary-foreground transition-colors hover:bg-secondary/80 sm:block"
-                      to="/register"
+                      to="/dashboard"
+                      className="block rounded-md px-3 py-2 text-sm hover:bg-muted"
+                      onClick={() => setOpen(false)}
                     >
-                      Register
+                      Dashboard
                     </NavLink>
-                  </>
+
+                    <div className="mt-2">
+                      <Logout />
+                    </div>
+                  </div>
                 )}
               </div>
-            </div>
+            ) : (
+              <>
+                <NavLink
+                  to="/login"
+                  className="rounded-md bg-primary px-5 py-2.5 text-sm text-primary-foreground"
+                >
+                  Login
+                </NavLink>
+
+                <NavLink
+                  to="/register"
+                  className="hidden sm:block rounded-md bg-secondary px-5 py-2.5 text-sm"
+                >
+                  Register
+                </NavLink>
+              </>
+            )}
           </div>
         </div>
       </div>

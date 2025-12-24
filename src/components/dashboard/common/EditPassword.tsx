@@ -73,11 +73,11 @@ const EditPassword = () => {
   return (
     <section className="mt-24">
       <h1 className="text-xl md:text-2xl font-semibold mb-2 text-center">
-        Edit Your Profile
+        Edit Your Password
       </h1>
       <p className="text-base md:text-lg text-gray-500 mb-4 text-center">
-        Update your personal information such as name, email, and phone number.
-        Make sure all details are accurate before saving changes.
+        Change your account password to keep your wallet secure. Make sure to
+        choose a strong password before saving changes.
       </p>
 
       <div className="w-8/12 mx-auto p-6">

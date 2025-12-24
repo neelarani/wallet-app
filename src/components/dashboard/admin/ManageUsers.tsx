@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { adminApi } from "@/redux";
+import { useState } from 'react';
+import { adminApi } from '@/redux';
 import {
   Table,
   TableBody,
@@ -7,11 +7,11 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { Button } from "@/components/ui/button";
-import { getErrorMessage, objectToSearchParams } from "@/utils";
-import type { IsActive } from "@/types";
-import { toast } from "sonner";
+} from '@/components/ui/table';
+import { Button } from '@/components/ui/button';
+import { getErrorMessage, objectToSearchParams } from '@/utils';
+import type { IsActive } from '@/types';
+import { toast } from 'sonner';
 
 const ManageUsers = () => {
   const [page, setPage] = useState(1);
@@ -20,7 +20,7 @@ const ManageUsers = () => {
 
   const { data, isLoading, isError } = adminApi.useRetrieveAllUsersQuery(
     objectToSearchParams({
-      role: "USER",
+      role: 'USER',
       page: page.toString(),
       limit: limit.toString(),
     })
@@ -43,13 +43,19 @@ const ManageUsers = () => {
       }).unwrap();
       toast.success(message);
     } catch (error: unknown) {
-      toast.error(getErrorMessage(error) || "Something went wrong.");
+      toast.error(getErrorMessage(error) || 'Something went wrong.');
     }
   };
 
   return (
-    <div>
-      <Table>
+    <div className="my-24">
+      <h1 className="text-xl md:text-2xl">Manage Users</h1>
+      <p className="text-base md:text-lg text-gray-500 mt-2">
+        View, edit, and control all user accounts. Monitor activity, ensure
+        account security efficiently.
+      </p>
+
+      <Table className="mt-12">
         <TableHeader>
           <TableRow>
             <TableHead>Name</TableHead>
@@ -63,14 +69,14 @@ const ManageUsers = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {data?.data?.map((user) => (
+          {data?.data?.map(user => (
             <TableRow key={user._id}>
               <TableCell>{user.name}</TableCell>
               <TableCell>{user.email}</TableCell>
-              <TableCell>{user.phone || "-"}</TableCell>
+              <TableCell>{user.phone || '-'}</TableCell>
               <TableCell>{user.isActive}</TableCell>
               <TableCell>{user.role}</TableCell>
-              <TableCell>{user.isVerified ? "Yes" : "No"}</TableCell>
+              <TableCell>{user.isVerified ? 'Yes' : 'No'}</TableCell>
               <TableCell>
                 {new Date(user.createdAt).toLocaleDateString()}
               </TableCell>
@@ -78,16 +84,16 @@ const ManageUsers = () => {
                 <Button
                   size="sm"
                   variant={
-                    user.isActive === "ACTIVE" ? "destructive" : "default"
+                    user.isActive === 'ACTIVE' ? 'destructive' : 'default'
                   }
                   onClick={() =>
                     blockUnblockUser(
-                      user.isActive === "ACTIVE" ? "BLOCKED" : "ACTIVE",
+                      user.isActive === 'ACTIVE' ? 'BLOCKED' : 'ACTIVE',
                       user._id as string
                     )
                   }
                 >
-                  {user.isActive === "ACTIVE" ? "Block" : "Unblock"}
+                  {user.isActive === 'ACTIVE' ? 'Block' : 'Unblock'}
                 </Button>
               </TableCell>
             </TableRow>
@@ -99,7 +105,7 @@ const ManageUsers = () => {
         <Button
           size="sm"
           disabled={page === 1}
-          onClick={() => setPage((prev) => prev - 1)}
+          onClick={() => setPage(prev => prev - 1)}
         >
           Previous
         </Button>
@@ -109,7 +115,7 @@ const ManageUsers = () => {
         <Button
           size="sm"
           disabled={page === totalPages}
-          onClick={() => setPage((prev) => prev + 1)}
+          onClick={() => setPage(prev => prev + 1)}
         >
           Next
         </Button>

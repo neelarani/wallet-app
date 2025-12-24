@@ -12,7 +12,6 @@ const NavItem: Array<{ path: string; label: string }> = [
   { label: 'Features', path: '/features' },
   { label: 'Contact', path: '/contact' },
   { label: 'FAQ', path: '/faq' },
-  { label: 'Dashboard', path: '/dashboard' },
 ];
 
 const NavMenu = () => {

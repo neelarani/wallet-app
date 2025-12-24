@@ -52,7 +52,7 @@ const AppSidebar = ({ ...props }: React.ComponentProps<typeof Sidebar>) => {
 
   return (
     <Sidebar {...props}>
-      <SidebarHeader>
+      <SidebarHeader className="p-5">
         <Link to="/">
           <Logo />
         </Link>
@@ -60,7 +60,10 @@ const AppSidebar = ({ ...props }: React.ComponentProps<typeof Sidebar>) => {
 
       <SidebarContent>
         {items.map(group => (
-          <SidebarGroup key={group.title}>
+          <SidebarGroup
+            key={group.title}
+            className="border border-accent-foreground/10 border-t-2"
+          >
             <SidebarGroupLabel className="text-base lg:text-xl mt-7">
               {group.title}
             </SidebarGroupLabel>
@@ -75,7 +78,7 @@ const AppSidebar = ({ ...props }: React.ComponentProps<typeof Sidebar>) => {
                           'block px-4 py-2 rounded font-semibold',
                           isActive
                             ? 'text-primary bg-primary/10'
-                            : 'text-gray-300 hover:text-primary hover:bg-primary/5'
+                            : 'text-accent-foreground/90 hover:text-primary hover:bg-primary/5'
                         )
                       }
                     >

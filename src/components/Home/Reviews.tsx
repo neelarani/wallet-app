@@ -3,16 +3,16 @@ import Marquee from 'react-fast-marquee';
 const reviews = [
   {
     img: 'https://i.ibb.co.com/RT7sWvTr/me-removebg-preview-removebg-preview.png',
-    name: 'Ayesha Rahman',
-    role: 'Product Manager',
+    name: 'Neela Rani',
+    role: 'Full-Stack Web Developer',
     message:
       'Wallet APP is very easy to use. Sending money has never been this fast!',
   },
   {
     img: 'https://i.ibb.co.com/47w1b41/images-4.jpg',
-    name: 'Rafiq Ahmed',
+    name: 'Rasel',
     role: 'Software Engineer',
-    message: 'I love the security and quick transactions. Highly recommended!',
+    message: 'good',
   },
   {
     img: 'https://i.ibb.co.com/z8p63KS/cartton.jpg',
@@ -23,14 +23,14 @@ const reviews = [
   },
   {
     img: 'https://i.ibb.co.com/PGgKf7G3/n.jpg',
-    name: 'Ayesha Rahman',
+    name: 'Neela',
     role: 'Product Manager',
     message:
       'Wallet APP is very easy to use. Sending money has never been this fast!',
   },
   {
     img: 'https://i.ibb.co.com/LDNxYfFM/322661271-732040441867635-6331001268726481519-n.jpg',
-    name: 'Rafiq Ahmed',
+    name: 'Rima',
     role: 'Software Engineer',
     message: 'I love the security and quick transactions. Highly recommended!',
   },

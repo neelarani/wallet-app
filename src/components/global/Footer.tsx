@@ -17,7 +17,7 @@ const Footer = () => {
     <footer className="bg-background border-t">
       <div className="container mx-auto">
         <div className="mx-auto px-4 py-16 sm:px-6 lg:px-8">
-          <div className="lg:flex lg:items-start lg:gap-8">
+          <div className="lg:items-start lg:gap-8 text-2xl">
             <Logo />
 
             <div className="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16 w-full">
@@ -71,12 +71,6 @@ const Footer = () => {
                   <li>
                     <Link to="/about">About Us</Link>
                   </li>
-                  <li>
-                    <Link to="/team">Meet the Team</Link>
-                  </li>
-                  <li>
-                    <Link to="/careers">Careers</Link>
-                  </li>
                 </ul>
               </div>
 
@@ -84,7 +78,7 @@ const Footer = () => {
                 <p className="font-medium text-foreground">Support</p>
                 <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                   <li>
-                    <Link to="/support">Contact Support</Link>
+                    <Link to="/contact">Contact Support</Link>
                   </li>
                   <li>
                     <Link to="/faq">FAQs</Link>
@@ -104,9 +98,6 @@ const Footer = () => {
                   <li>
                     <Link to="/privacy">Privacy Policy</Link>
                   </li>
-                  <li>
-                    <Link to="/cookies">Cookie Policy</Link>
-                  </li>
                 </ul>
               </div>
             </div>
@@ -123,9 +114,6 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="/privacy">Privacy Policy</Link>
-              </li>
-              <li>
-                <Link to="/cookies">Cookies</Link>
               </li>
             </ul>
           </div>
