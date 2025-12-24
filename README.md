@@ -2,10 +2,10 @@
 
 The **wallet-app frontend** is a modern digital wallet interface built with
 **React, Redux Toolkit, TypeScript, Tailwind CSS, and Axios**. It connects to
-the [Wallet APP API](https://wallet-api.vercel.app/) and provides role-based
+the [Wallet APP API](https://wallet-api-psi.vercel.app) and provides role-based
 dashboards for **Users, Agents, and Admins**.
 
-[LIVE LINK -> https://wallet-app.vercel.app](https://wallet-app.vercel.app)
+[LIVE LINK -> https://wallet-app-mu-sooty.vercel.app](https://wallet-app-mu-sooty.vercel.app)
 
 ## 🚀 Tech Stack
 
@@ -70,7 +70,7 @@ yarn install
 Create a `.env` file in the root:
 
 ```bash
-VITE_API_URL=https://ababil-wallet-api.vercel.app/api/v1
+VITE_API_URL=https://wallet-api-psi.vercel.app/api/v1
 ```
 
 ### 4. Run development server
@@ -120,4 +120,4 @@ MIT License © 2025 [neelarani](https://gitlab.com/neelarani)
 
 ## ❤️ Made with Love
 
-Neela
+Neela Rani
