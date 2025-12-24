@@ -114,10 +114,10 @@ const Footer = () => {
 
           <Separator className="my-8" />
           <div className="sm:flex sm:justify-between sm:items-center">
-            <p className="text-xs text-muted-foreground">
+            <p className="text-base text-muted-foreground">
               © {new Date().getFullYear()} Wallet APP. All rights reserved.
             </p>
-            <ul className="mt-4 flex flex-wrap gap-4 text-xs text-muted-foreground sm:mt-0">
+            <ul className="mt-4 flex flex-wrap gap-4 text-base text-muted-foreground sm:mt-0">
               <li>
                 <Link to="/terms">Terms & Conditions</Link>
               </li>
