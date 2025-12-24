@@ -18,7 +18,7 @@ const Hero = () => {
       <HeroImages />
       <div className="container mx-auto  py-12 px-8">
         <section className="text-center py-16">
-          <h1 className="text-5xl font-extrabold tracking-tight text-foreground mb-6">
+          <h1 className="text-2xl md:4xl lg:5xl font-extrabold tracking-tight text-foreground mb-6">
             Welcome to <span className="text-primary"> Wallet APP</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
@@ -29,7 +29,7 @@ const Hero = () => {
             {!user && (
               <Link
                 to="/register"
-                className="rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+                className="rounded-md bg-primary md:px-6 md:py-3 text-sm  text-primary-foreground hover:bg-primary/90 transition-colors font-bold"
               >
                 Get Started
               </Link>

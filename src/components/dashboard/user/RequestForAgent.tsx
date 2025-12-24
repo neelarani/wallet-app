@@ -29,7 +29,7 @@ const RequestForAgent = () => {
         Approve or reject applications based on the eligibility criteria.
       </p>
 
-      <Card className="w-5/11 mx-auto mt-6">
+      <Card className="md:w-5/11 mx-auto mt-6">
         <CardHeader>
           <CardTitle>Request For Agent</CardTitle>
         </CardHeader>

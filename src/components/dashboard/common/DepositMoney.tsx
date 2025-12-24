@@ -56,7 +56,7 @@ const DepositMoney = () => {
         amount is correct before proceeding.
       </p>
       <div className="mt-8">
-        <div className="w-5/11 mx-auto p-6 bg-primary-foreground rounded-md shadow-md">
+        <div className="md:w-5/11 mx-auto p-6 bg-primary-foreground rounded-md shadow-md">
           <h2 className="text-xl font-bold mb-4">Deposit Money</h2>
 
           <Form {...form}>

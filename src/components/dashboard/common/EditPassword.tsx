@@ -80,7 +80,7 @@ const EditPassword = () => {
         choose a strong password before saving changes.
       </p>
 
-      <div className="w-8/12 mx-auto p-6">
+      <div className="md:w-8/12 mx-auto p-6">
         <Card className="shadow-lg rounded-2xl">
           <CardHeader>
             <CardTitle className="text-xl font-bold">Edit Password</CardTitle>

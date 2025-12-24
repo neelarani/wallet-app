@@ -60,7 +60,7 @@ const NavMenu = () => {
                   </NavLink>
                 </li>
               ))}
-              <li className="block rounded-md px-3 py-2 text-center">
+              <li className="block rounded-md px-3 py-2 ">
                 <ModeToggle />
               </li>
             </ul>

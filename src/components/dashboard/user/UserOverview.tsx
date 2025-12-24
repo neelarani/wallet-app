@@ -35,7 +35,7 @@ const UserOverview = () => {
         activity. Stay updated on your balance and important notifications.
       </p>
 
-      <div className="grid gap-4 sm:grid-cols-3 w-8/11 mx-auto mt-16">
+      <div className="grid gap-4 sm:grid-cols-3 md:w-8/11 mx-auto mt-16">
         <Card
           className="shadow-sm rounded-2xl"
           id="stats-user-total-transaction"

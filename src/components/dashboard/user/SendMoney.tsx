@@ -64,7 +64,7 @@ const SendMoney = () => {
         all information is correct before proceeding.
       </p>
 
-      <Card className="w-6/11 mx-auto">
+      <Card className="md:w-6/11 mx-auto">
         <CardHeader>
           <CardTitle>Send Money</CardTitle>
         </CardHeader>

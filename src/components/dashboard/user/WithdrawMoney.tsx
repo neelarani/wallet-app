@@ -63,7 +63,7 @@ const CashOut = () => {
         Enter the amount you want to withdraw from your wallet. Ensure the
         amount is available in your balance before proceeding.
       </p>
-      <Card className="w-6/11 mx-auto">
+      <Card className="md:w-6/11 mx-auto">
         <CardHeader>
           <CardTitle>Withdraw Money</CardTitle>
         </CardHeader>

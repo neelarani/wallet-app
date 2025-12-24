@@ -78,7 +78,7 @@ const UpdateProfile = () => {
         number, and other personal details to ensure your account is accurate.
       </p>
 
-      <div className="w-5/11 mx-auto p-6">
+      <div className="md:w-5/11 mx-auto p-6">
         <Card className="shadow-lg rounded-2xl">
           <CardHeader>
             <CardTitle className="text-font text-xl">Update Profile</CardTitle>

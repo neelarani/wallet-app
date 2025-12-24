@@ -12,7 +12,7 @@ const Secure = () => {
           </h1>
 
           {/* Main Layout with Phone Center and Features */}
-          <div className="relative flex items-center justify-center gap-8 md:gap-16">
+          <div className="relative flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
             {/* Left Features */}
             <div className="hidden lg:flex flex-col gap-16 w-1/4">
               {/* Feature 1 */}

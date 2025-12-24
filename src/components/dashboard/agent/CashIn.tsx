@@ -63,7 +63,7 @@ const CashIn = () => {
         Instantly top up your wallet balance and enjoy seamless transactions.
       </p>
 
-      <Card className="w-6/11 mx-auto">
+      <Card className="md:w-6/11 mx-auto">
         <CardHeader>
           <CardTitle>Cash In</CardTitle>
         </CardHeader>

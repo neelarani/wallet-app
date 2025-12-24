@@ -52,7 +52,7 @@ const ReviewCard = ({ review }: { review: (typeof reviews)[0] }) => (
 const Reviews = () => {
   return (
     <section className="py-12 ">
-      <h2 className="text-3xl font-bold text-center mb-8">
+      <h2 className="text-xl md:text-3xl lg:text-4xl font-bold text-center mb-8">
         What Our Users Say
       </h2>
       <Marquee gradient={false} speed={50}>
