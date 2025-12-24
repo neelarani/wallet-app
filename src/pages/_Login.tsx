@@ -20,6 +20,7 @@ import { toast } from 'sonner';
 import { ENV } from '@/config';
 import { getErrorMessage } from '@/utils';
 import { Card, CardContent } from '@/components/ui/card';
+import LoginCredentials from '@/components/global/LoginCredentials';
 
 const loginSchema = z.object({
   email: z.string().email({ message: 'Please enter a valid email address.' }),
@@ -50,11 +51,11 @@ const Login = () => {
     },
   });
 
+  const { setValue } = form;
+
   const onSubmit = async (inputData: LoginSchema) => {
     try {
-      const res = await login(inputData).unwrap();
-
-      console.log(res);
+      await login(inputData).unwrap();
 
       toast.success('Login Successful!', {
         richColors: true,
@@ -73,6 +74,12 @@ const Login = () => {
           <h2 className="mb-6 text-center text-2xl font-bold tracking-tight text-foreground">
             Login to your account 🔐
           </h2>
+          <LoginCredentials
+            setCredentials={data => {
+              setValue('email', data.email);
+              setValue('password', data.password);
+            }}
+          />
 
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -136,7 +143,7 @@ const Login = () => {
                 )}
               />
 
-              <Button type="submit" className="w-full">
+              <Button type="submit" className="w-full cursor-pointer">
                 Sign In
               </Button>
               <Button
@@ -150,7 +157,7 @@ const Login = () => {
                 <img
                   src="https://www.svgrepo.com/show/475656/google-color.svg"
                   alt="Google logo"
-                  className="h-5 w-5"
+                  className="h-5 w-5 cursor-pointer"
                 />
                 Sign in with Google
               </Button>
