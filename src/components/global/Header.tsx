@@ -1,6 +1,6 @@
-import { Logo, Logout, NavMenu } from "@/components";
-import { userApi } from "@/redux";
-import { NavLink } from "react-router-dom";
+import { Logo, Logout, NavMenu } from '@/components';
+import { userApi } from '@/redux';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
   const user = userApi.useUserInfoQuery();
@@ -17,7 +17,7 @@ const Header = () => {
           <div className="flex flex-1 items-center justify-end gap-6">
             <NavMenu />
             <div className="flex items-center gap-4">
-              <div className="sm:flex sm:gap-4">
+              <div className="sm:flex sm:gap-4 ">
                 {userData ? (
                   <Logout />
                 ) : (
